@@ -5,6 +5,7 @@
     '@package': 'Czms.Condolences'
     '@controller': 'Comment'
     '@action': 'index'
+  appendExceedingArguments: true
 
 -
   name: 'Comment'
@@ -13,3 +14,4 @@
     '@package': 'Czms.Condolences'
     '@controller': 'Comment'
     '@action': 'index'
+  appendExceedingArguments: true
