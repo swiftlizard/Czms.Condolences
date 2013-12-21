@@ -1,0 +1,15 @@
+-
+  name: 'Homepage'
+  uriPattern: ''
+  defaults:
+    '@package': 'Czms.Condolences'
+    '@controller': 'Comment'
+    '@action': 'index'
+
+-
+  name: 'Comment'
+  uriPattern: 'comment/{@action}'
+  defaults:
+    '@package': 'Czms.Condolences'
+    '@controller': 'Comment'
+    '@action': 'index'

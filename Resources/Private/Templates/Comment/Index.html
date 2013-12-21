@@ -1,0 +1,46 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">Post your condolence here</f:section>
+
+<f:section name="Content">
+	<div class="container clearfix">
+		<div class="grid_3">&nbsp;</div>
+		<div class="grid_6">
+			<f:form method="post" action="create" object="{comment}" name="comment" enctype="multipart/form-data">
+                <div class="inputfield">
+                    <f:form.textfield property="headline" id="Headline" placeholder="Your Headline" />
+                </div>
+				<div class="textareaform">
+					<label for="Condolence">Leave your message here:</label>
+					<f:form.textarea property="condolence" id="Condolence"/>
+				</div>
+				<div class="inputfield">
+					<f:form.textfield property="name" id="Name" placeholder="Your Name" />
+				</div>
+				<div class="submitbutton">
+					<f:form.submit value="Send"/>
+				</div>
+			</f:form>
+		</div>
+		<div class="grid_3 omega">&nbsp;</div>
+	</div>
+
+    <div class="container clearfix">
+        <div class="grid_3">&nbsp;</div>
+        <div class="grid_6 omega">
+
+            <f:widget.paginate configuration="{itemsPerPage:5, maximumNumberOfLinks: 5}" objects="{commentList}" as="commentPaginated">
+                <f:for each="{commentPaginated}" as="comment">
+                    <div class="condolences">
+                        <h2>{comment.headline}</h2>
+                        <p>{comment.condolence}</p>
+                        <div class="right">
+                            {comment.name} (<f:format.date>{comment.date}</f:format.date>)
+                        </div>
+                    </div>
+                </f:for>
+            </f:widget.paginate>
+        </div>
+        <div class="grid_3 omega">&nbsp;</div>
+    </div>
+</f:section>

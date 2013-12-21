@@ -1,0 +1,209 @@
+@font-face {
+	font-family: 'share-regularregular';
+	src: url('font/share-regular-webfont.eot');
+	src: url('font/share-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('font/share-regular-webfont.woff') format('woff'),
+	url('font/share-regular-webfont.ttf') format('truetype'),
+	url('font/share-regular-webfont.svg#share-regularregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+
+
+
+@font-face {
+	font-family: 'share-italicregular';
+	src: url('font/share-italic-webfont.eot');
+	src: url('font/share-italic-webfont.eot?#iefix') format('embedded-opentype'),
+	url('font/share-italic-webfont.woff') format('woff'),
+	url('font/share-italic-webfont.ttf') format('truetype'),
+	url('font/share-italic-webfont.svg#share-italicregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background:#eeeeee;
+	margin-bottom: 5%;
+}
+
+p {
+	font-size: 14px;
+}
+
+
+div.donationbox {
+	background:#dee8ee url(../Img/ico_candle.png) no-repeat bottom right;
+	height: 320px;
+	margin-bottom: 0;
+}
+
+div.infomargin {
+	margin-top: 7%;
+}
+
+div.marginbox {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+div.infobox {
+	border: 3px solid black;
+	padding: 3px;
+	background: white;
+}
+
+.condolences h2 {
+	font-family: share-regularregular, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0;
+	border-top: 1px solid #cfcfcf;
+}
+
+.condolences p {
+	color: #9f9f9f;
+}
+
+.condolences .right {
+	font-size: 90%;
+	text-align: right;
+	font-style: italic;
+}
+
+.infobox h2 {
+	font-family: share-regularregular, sans-serif;
+	font-size: 28px;
+	margin: 0;
+}
+
+.infobox h3 {
+	font-family: share-regularregular, sans-serif;
+	font-size: 33px;
+	margin: 0;
+	color: #cfcfcf;
+}
+
+.head {
+	position: relative;
+}
+
+h1 {
+	color: #666666;
+	font-family: share-italicregular, sans-serif;
+	font-size: 30px;
+}
+
+
+.head h3 {
+	color: #666666;
+	font-family: share-italicregular, sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 18px;
+	bottom: 0;
+	margin-bottom: 0.6%;
+}
+
+.donationbox h4 {
+	font-family: share-regularregular, sans-serif;
+	font-weight: normal;
+	font-size: 21px;
+}
+
+.textareaform label {
+	display: block;
+	color: #888888;
+}
+
+textarea {
+	min-height: 120px;
+	width: 100%;
+	border: none;
+	padding: 2%;
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+}
+
+.inputfield input {
+	width: 100%;
+	border: none;
+	padding: 2%;
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+}
+
+.inputfield, .submitbutton {
+	margin-top: 1%;
+}
+
+.submitbutton input {
+	background: #cfcfcf;
+	font-family: share-regularregular, sans-serif;
+	text-transform: uppercase;
+	width: 50%;
+	border: none;
+	padding: 2%;
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+}
+
+.typo3-widget-paginator {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.typo3-widget-paginator li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.typo3-widget-paginator li {
+	float: left;
+}
+
+.typo3-widget-paginator li a {
+	text-decoration: none;
+	color: #919191;
+}
+
+.typo3-widget-paginator li.previous a {
+	background: url(http://typo3.org/typo3conf/ext/t3org_template/i/i-arrows.png) no-repeat -533px -244px;
+	text-indent: -20000px;
+	display: block;
+	height: 26px;
+	width: 30px;
+}
+
+.typo3-widget-paginator li.next a {
+	background: url(http://typo3.org/typo3conf/ext/t3org_template/i/i-arrows.png) no-repeat -473px -299px;
+	text-indent: -20000px;
+	display: block;
+	height: 26px;
+	width: 30px;
+}
+
+.typo3-widget-paginator li a {
+	display: block;
+	width: 30px;
+	height: 26px;
+	text-align: center;
+}
+
+.typo3-widget-paginator li.current {
+	display: block;
+	width: 30px;
+	height: 26px;
+	text-align: center;
+}
