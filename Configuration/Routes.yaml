@@ -13,5 +13,4 @@
   defaults:
     '@package': 'Czms.Condolences'
     '@controller': 'Comment'
-    '@action': 'index'
   appendExceedingArguments: true

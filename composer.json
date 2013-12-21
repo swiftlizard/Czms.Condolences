@@ -1,1 +1,1 @@
-{"name":"czms\/condolences","type":"typo3-flow-package","description":"Add description here","require":{"typo3\/flow":"*"},"autoload":{"psr-0":{"Czms\\Condolences":"Classes"}}}
+{"name":"czms\/condolences","type":"typo3-flow-package","description":"Condolences Package","require":{"typo3\/flow":"*"},"autoload":{"psr-0":{"Czms\\Condolences":"Classes"}}}
