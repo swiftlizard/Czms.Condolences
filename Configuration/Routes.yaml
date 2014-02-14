@@ -1,3 +1,22 @@
+#                                                                        #
+# Routes configuration                                                   #
+#                                                                        #
+# This file contains the configuration for the MVC router.               #
+# Just add your own modifications as necessary.                          #
+#                                                                        #
+# Please refer to the Flow manual for possible configuration options.   #
+#                                                                        #
+
+##
+# Subroutes from the Welcome package.
+#
+# If the package "Welcome" is installed, its fallback route will point to an
+# informative welcome screen.
+
+##
+# Flow subroutes
+#
+
 -
   name: 'Homepage'
   uriPattern: ''
@@ -9,8 +28,15 @@
 
 -
   name: 'Comment'
-  uriPattern: 'comment/{@action}'
+  uriPattern: 'comment/{@action}(/{--typo3-fluid-viewhelpers-widget-paginateviewhelper.currentPage})'
   defaults:
     '@package': 'Czms.Condolences'
     '@controller': 'Comment'
+    '@action': 'index'
+    '--typo3-fluid-viewhelpers-widget-paginateviewhelper':
+      '@package': ''
+      '@subpackage': ''
+      '@controller': ''
+      '@action': 'index'
+      'currentPage': ''
   appendExceedingArguments: true
