@@ -8,6 +8,10 @@ namespace Czms\Condolences\Controller;
 
 use TYPO3\Flow\Annotations as Flow;
 
+/**
+ * Class CommentController
+ * @package Czms\Condolences\Controller
+ */
 class CommentController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
     /**
@@ -35,11 +39,15 @@ class CommentController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 		$this->view->assign('commentList', $commentList);
 	}
 
-    /**
-     * @param \Czms\Condolences\Domain\Model\Comment $comment
-     * @return void
-     */
-    public function createAction(\Czms\Condolences\Domain\Model\Comment $comment){
+	/**
+	 * Adds the given new product object to the product repository
+	 * @Flow\Validate(type="\Lelesys\Captcha\Validators\CaptchaValidator", value="$captcha")
+	 * @Flow\Validate(type="NotEmpty", value="$captcha")
+	 * @param \Czms\Condolences\Domain\Model\Comment $comment Comment to add
+	 * @param string $captcha
+	 * @return void
+	 */
+    public function createAction(\Czms\Condolences\Domain\Model\Comment $comment, $captcha){
         $comment->setDate(new \DateTime());
         $this->commentRepository->add($comment);
         $this->persistenceManager->persistAll();

@@ -1,3 +1,4 @@
+{namespace captcha = Lelesys\Captcha\ViewHelpers}
 <f:layout name="Default"/>
 
 <f:section name="Title">Post your condolence here</f:section>
@@ -6,6 +7,19 @@
 	<div class="container clearfix">
 		<div class="grid_3">&nbsp;</div>
 		<div class="grid_6">
+			<f:form.validationResults for="{captcha}">
+				<f:if condition="{validationResults.flattenedErrors}">
+					<ul class="errors">
+						<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">
+							<li>{propertyPath}
+								<ul>
+									<li><f:for each="{errors}" as="error">{error}</f:for> </li>
+								</ul>
+							</li>
+						</f:for>
+					</ul>
+				</f:if>
+			</f:form.validationResults>
 			<f:form method="post" action="create" object="{comment}" name="comment" enctype="multipart/form-data">
                 <div class="inputfield">
                     <f:form.textfield property="headline" id="Headline" placeholder="Your Headline" />
@@ -17,6 +31,8 @@
 				<div class="inputfield">
 					<f:form.textfield property="name" id="Name" placeholder="Your Name" />
 				</div>
+				<captcha:captcha></captcha:captcha>
+				<input type="text" name="captcha" />
 				<div class="submitbutton">
 					<f:form.submit value="Send"/>
 				</div>

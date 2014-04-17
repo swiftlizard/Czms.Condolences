@@ -8,6 +8,10 @@ namespace Czms\Condolences\Controller;
 
 use TYPO3\Flow\Annotations as Flow;
 
+/**
+ * Class StandardController
+ * @package Czms\Condolences\Controller
+ */
 class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
