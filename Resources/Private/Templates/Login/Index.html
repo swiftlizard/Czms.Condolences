@@ -1,0 +1,25 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Register</f:section>
+
+<f:section name="Content">
+	<f:flashMessages />
+
+	<f:security.ifHasRole role="Admin">
+		<f:then>
+			<f:link.action action="logout" controller="Login">Logout</f:link.action>
+		</f:then>
+		<f:else>
+			<f:form action="authenticate" method="post" name="loginform" class="loginform">
+				<label>User:</label><f:form.textfield name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" /><br />
+				<label>Pass:</label><f:form.password name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" /><br />
+				<f:form.submit value="Login" />
+			</f:form>
+			<p>
+			<f:link.action action="register" controller="Login">Register here!!</f:link.action>
+			</p>
+		</f:else>
+	</f:security.ifHasRole>
+
+
+</f:section>

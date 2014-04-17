@@ -1,0 +1,11 @@
+resources:
+  methods:
+    Czms_Condolences_Admin_Controller: 'method(Czms\Condolences\Controller\AdminController->.*Action())'
+roles:
+  Admin: [User]
+  User: []
+  Guest: []
+acls:
+  Admin:
+    methods:
+      Czms_Condolences_Admin_Controller: GRANT

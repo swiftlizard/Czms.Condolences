@@ -1,0 +1,20 @@
+{namespace captcha = Lelesys\Captcha\ViewHelpers}
+<f:layout name="Default"/>
+
+<f:section name="Title">Delete SPAM here</f:section>
+
+<f:section name="Content">
+	<div class="container clearfix">
+		<div class="grid_3">&nbsp;</div>
+		<div class="grid_6">
+			<ul>
+			<f:for each="{comments}" as="comment">
+				<li>
+					<f:link.action action="delete" controller="admin" arguments="{commentToDelete:comment}">[delete]</f:link.action> > {comment.name} -> {comment.headline} -> {comment.condolence}
+				</li>
+			</f:for>
+			</ul>
+		<div class="grid_3 omega">&nbsp;</div>
+	</div>
+	</div>
+</f:section>
