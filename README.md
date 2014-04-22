@@ -14,7 +14,7 @@ on top of the file.
 further more you have to run the following commands on CLI:
 - ./flow doctrine:create
 - ./flow admin:setup
-- ./flow admin:createadminuser --username="<yourUsername>" --password="<yourPassword>"
+- ./flow admin:createadminuser --username="yourUsername" --password="yourPassword"
 
 After that you can Login and delete Spam post at:
 
