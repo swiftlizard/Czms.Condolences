@@ -17,30 +17,30 @@
 		<div class="head container infomargin clearfix">
 			<div class="grid_3"><img src="<f:uri.resource path='Img/logo_typo3_bk.png' />" alt="TYPO3" width="100%" height="auto" /></div>
 			<div class="grid_9 omega">
-				<h3>Do not go where the path may lead.<br />Go where there is no path and leave a trail instead.</h3>
+				<h3><f:format.raw value="{settings.data.claim}" /></h3>
 			</div>
 		</div>
 		<div class="infobox infomargin container clearfix">
 			<div class="grid_1">&nbsp;</div>
 			<div class="grid_2 infomargin">
-				<img src="<f:uri.resource path='Img/img_andreas-otto.png' />" alt="Andreas Otto" width="100%" height="auto" /></div>
+				<img src="<f:uri.resource path='{settings.data.imagePath}' />" alt="{settings.data.personName}" width="100%" height="auto" /></div>
 			<div class="grid_4 infomargin">
-				<h2>Andreas Otto</h2>
-				<h3>1973 - 2013</h3>
-				<p>Our sincerest condolences go out to all his family members and friends. He and his community work will stay in our hearts forever.</p>
+				<h2>{settings.data.personName}</h2>
+				<h3>{settings.data.lifeTime}</h3>
+				<p>{settings.data.condolences}</p>
 			</div>
 			<div class="grid_1">&nbsp;</div>
 			<div class="grid_4 omega donationbox">
 				<div class="marginbox">
-					<h4>Donate to Andreas' family</h4>
-					<p>Show your love and help with a little donation for the funeral and other unexpected costs.</p>
+					<h4>{settings.paypal.headline}</h4>
+					<p>{settings.paypal.claim}</p>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 						<input type="hidden" name="cmd" value="_xclick" />
-						<input type="hidden" name="business" value="andreas-otto-memorial@typo3.org" />
-						<input type="hidden" name="item_name" value="Condolence Donation Andreas Otto" />
+						<input type="hidden" name="business" value="{settings.paypal.business}" />
+						<input type="hidden" name="item_name" value="{settings.paypal.itemName}" />
 						<input type="hidden" name="item_number" value="0003" />
 						<input type="hidden" name="lc" value="EN" />
-						<input type="image" src="<f:uri.resource path='Img/ico_paypal.png' />" border="0" width="100%" height="auto" name="submit" alt="Donate to Andreas' Family" />
+						<input type="image" src="<f:uri.resource path='Img/ico_paypal.png' />" border="0" width="100%" height="auto" name="submit" alt="{settings.paypal.headline}" />
 						<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1" />
 						<input type="hidden" name="no_shipping" value="2" />
 						<input type="hidden" name="no_note" value="1" />

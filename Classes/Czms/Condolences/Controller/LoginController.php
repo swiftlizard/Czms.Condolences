@@ -11,6 +11,11 @@ use TYPO3\Flow\Annotations as Flow;
 class LoginController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
+	 * @var array
+	 */
+	protected $settings = array();
+
+	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
 	 * @Flow\Inject
 	 */
@@ -44,6 +49,17 @@ class LoginController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	}
 
 	/**
+	 * Injects the Flow settings, only the persistence part is kept for further use
+	 *
+	 * @param array $settings
+	 * @return void
+	 */
+	public function injectSettings(array $settings) {
+		$this->settings = $settings;
+		// \TYPO3\Flow\var_dump($this->settings);
+	}
+
+	/**
 	 * Index action
 	 *
 	 * @return void
@@ -51,7 +67,10 @@ class LoginController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	public function indexAction() {
 		// example how to access account informations
 		$account = $this->securityContext->getAccount();
+
 		//\TYPO3\Flow\var_dump($account);
+
+		$this->view->assign('settings', $this->settings);
 	}
 
 	/**

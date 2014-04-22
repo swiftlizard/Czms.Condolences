@@ -1,0 +1,41 @@
+TYPO3:
+  Flow:
+    security:
+      enable: TRUE
+      authentication:
+        authenticationStrategy: oneToken
+        providers:
+          DefaultProvider:
+            provider: PersistedUsernamePasswordProvider
+            entryPoint: 'WebRedirect'
+            entryPointOptions:
+              routeValues:
+                '@package': 'Czms.Condolences'
+                '@controller': 'Login'
+                '@action': 'index'
+Lelesys:
+  Captcha:
+    height: 200
+    width: 60
+
+Czms:
+  Condolences:
+    data:
+      #imagePath: "Img/img_andreas-otto.png"
+      #personName: "Andreas Otto"
+      #lifeTime: "1973 - 2013"
+
+      imagePath: "Img/img_alex-ebner.png"
+      personName: "Alex Ebner"
+      lifeTime: "1976 - 2013"
+      claim: "Do not go where the path may lead.<br />Go where there is no path and leave a trail instead."
+      condolences: "Our sincerest condolences go out to all his family members and friends. He and his community work will stay in our hearts forever."
+    paypal:
+      #business: "andreas-otto-memorial@typo3.org"
+      #itemName: "Condolence Donation Andreas Otto"
+      #headline: "Donate to Andreas' Family"
+
+      business: "alex-ebner-memorial@typo3.org"
+      itemName: "Condolence Donation Alex Ebner"
+      headline: "Donate to Alexs' Family"
+      claim: "Show your love and help with a little donation for the funeral and other unexpected cost."

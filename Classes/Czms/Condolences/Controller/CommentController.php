@@ -14,6 +14,11 @@ use TYPO3\Flow\Annotations as Flow;
  */
 class CommentController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
+	/**
+	 * @var array
+	 */
+	protected $settings = array();
+
     /**
      * @var \Czms\Condolences\Domain\Repository\CommentRepository
      * @Flow\Inject
@@ -26,6 +31,18 @@ class CommentController extends \TYPO3\Flow\Mvc\Controller\ActionController {
      */
     protected $persistenceManager;
 
+
+	/**
+	 * Injects the Flow settings, only the persistence part is kept for further use
+	 *
+	 * @param array $settings
+	 * @return void
+	 */
+	public function injectSettings(array $settings) {
+		$this->settings = $settings;
+		// \TYPO3\Flow\var_dump($this->settings);
+	}
+
     /**
 	 * @return void
 	 */
@@ -37,6 +54,7 @@ class CommentController extends \TYPO3\Flow\Mvc\Controller\ActionController {
         );
         $commentList = $this->commentRepository->findAll();
 		$this->view->assign('commentList', $commentList);
+		$this->view->assign('settings', $this->settings);
 	}
 
 	/**
@@ -60,6 +78,8 @@ class CommentController extends \TYPO3\Flow\Mvc\Controller\ActionController {
     public function thankYouAction(){
         // some code here
     }
+
+
 
 }
 

@@ -10,16 +10,33 @@ use TYPO3\Flow\Annotations as Flow;
 class AdminController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
+	 * @var array
+	 */
+	protected $settings = array();
+
+	/**
 	 * @var \Czms\Condolences\Domain\Repository\CommentRepository
 	 * @Flow\Inject
 	 */
 	protected $commentRepository;
 
 	/**
+	 * Injects the Flow settings, only the persistence part is kept for further use
+	 *
+	 * @param array $settings
+	 * @return void
+	 */
+	public function injectSettings(array $settings) {
+		$this->settings = $settings;
+		// \TYPO3\Flow\var_dump($this->settings);
+	}
+
+	/**
 	 * @return void
 	 */
 	public function indexAction() {
 		$this->view->assign('comments', $this->commentRepository->findAll());
+		$this->view->assign('settings', $this->settings);
 	}
 
 	/**
