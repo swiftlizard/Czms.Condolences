@@ -1,13 +1,12 @@
 # Setup Information
 
 To setup this package you have to alter the default flow Routes.yaml by adding:
-
--
-  name: 'Condolences'
-  uriPattern: '<CondolencesSubroutes>'
-  subRoutes:
-    CondolencesSubroutes:
-      package: Czms.Condolences
+        -
+          name: 'Condolences'
+          uriPattern: '<CondolencesSubroutes>'
+          subRoutes:
+            CondolencesSubroutes:
+              package: Czms.Condolences
 
 on top of the file.
 
